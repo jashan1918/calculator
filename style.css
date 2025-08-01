@@ -1,0 +1,46 @@
+/* Reset some default margin */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  min-height: 100vh;         /* full viewport height */
+  background: #f0f0f0;
+}
+
+#container {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#screen {
+  background: #fff;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+#equals {
+    background-color: rgb(255, 197, 89);
+    width: 5rem;
+}

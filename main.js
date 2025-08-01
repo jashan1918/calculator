@@ -19,3 +19,6 @@ function operate(operator, num1, num2) {
   if (operator === "*") return multiply(num1, num2);
   if (operator === "/") return divide(num1, num2);
 }
+
+const result = operate('+' , 5, 10);
+console.log(result);
