@@ -18,8 +18,8 @@ function divide(num1, num2) {
 
 function operate(operator, a, b) {
 
-  const a = parsefloat(a);
-  const b = parsefloat(b);  
+  a = parseFloat(a);
+  b = parseFloat(b);  
 
   if (operator === "+") return add(a, b);
   if (operator === "-") return subtract(a, b);
@@ -38,6 +38,23 @@ const screen = document.getElementById("screen");
 const buttonsDiv = document.getElementById("buttons")
 
 buttonsDiv.addEventListener("click" , (e) => {
+
   //check if the button was clicked
+
+  if(e.target.tagName = "BUTTON") {
+
+    console.log("this is working")
+
+    const value = e.target.textContent
+    console.log(value);
+    if(value >= '0' && value <= 9){
+    handleDisplay(value);
+    }
+  }
   
 })
+
+function handleDisplay(value) {
+    screen.textContent = value;
+
+}
