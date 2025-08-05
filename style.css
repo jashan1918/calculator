@@ -44,3 +44,8 @@ button {
     background-color: rgb(255, 197, 89);
     width: 5rem;
 }
+
+#clear{
+  width: 10.1rem;
+  margin-left: 2.4rem;
+}
