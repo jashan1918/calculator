@@ -31,9 +31,6 @@ function operate(operator, a, b) {
   }
 }
 
-const result = operate('+' , 5, 10);
-console.log(result);
-
 const screen = document.getElementById("screen");
 const buttonsDiv = document.getElementById("buttons")
 
@@ -41,20 +38,24 @@ buttonsDiv.addEventListener("click" , (e) => {
 
   //check if the button was clicked
 
-  if(e.target.tagName = "BUTTON") {
+  if(e.target.tagName === "BUTTON") {
 
     console.log("this is working")
 
     const value = e.target.textContent
+    const current = screen.textContent
+
     console.log(value);
-    if(value >= '0' && value <= 9){
-    handleDisplay(value);
+    if((value >= '0' && value <= '9')){
+      screen.textContent += value;
+    }if(value === '.') {
+      const parts = screen.textContent.split(/[\+\-|*\/]/)
+      const lastNumber = parts.pop();
+
+      if(!lastNumber.includes(".")){
+        screen.textContent += value
+      }
     }
   }
   
 })
-
-function handleDisplay(value) {
-    screen.textContent = value;
-
-}
