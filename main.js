@@ -57,5 +57,11 @@ buttonsDiv.addEventListener("click" , (e) => {
       }
     }
   }
+document.getElementById("clear").addEventListener("click", clearScreen);
+
+function clearScreen() {
+  screen.textContent = "";
+}
+
   
 })
