@@ -31,6 +31,16 @@ function operate(operator, a, b) {
   }
 }
 
+
+document.getElementById("clear").addEventListener("click", clearScreen);
+
+function clearScreen() {
+  screen.textContent = "";
+}
+
+
+
+
 const screen = document.getElementById("screen");
 const buttonsDiv = document.getElementById("buttons")
 
@@ -56,12 +66,25 @@ buttonsDiv.addEventListener("click" , (e) => {
         screen.textContent += value
       }
     }
-  }
-document.getElementById("clear").addEventListener("click", clearScreen);
 
-function clearScreen() {
-  screen.textContent = "";
+
+if(value ==="+" ||  value === "-" ||value  === "*" ||value  === "/"){
+
+  handleOperators(value);
 }
-
-  
+  }
 })
+
+
+function handleOperators(value) {
+
+  console.log("this is the handleOpertars function and its working")
+  if(screen.textContent.trim() === "") {
+    if(value === "+" || value === "*" || value === "/"){
+      return;
+    }else {
+     screen.textContent += value
+     console.log("this is happeni")
+    }
+    }
+}
