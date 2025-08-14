@@ -68,7 +68,7 @@ buttonsDiv.addEventListener("click" , (e) => {
     }
 
 
-if(value ==="+" ||  value === "-" ||value  === "*" ||value  === "/"){
+if(value ==="+" ||  value === "-" ||value  === "x" ||value  === "/"){
 
   handleOperators(value);
 }
@@ -78,13 +78,27 @@ if(value ==="+" ||  value === "-" ||value  === "*" ||value  === "/"){
 
 function handleOperators(value) {
 
+  //screen if empty
   console.log("this is the handleOpertars function and its working")
   if(screen.textContent.trim() === "") {
-    if(value === "+" || value === "*" || value === "/"){
+    if(value === "+" || value === "x" || value === "/"){
       return;
     }else {
      screen.textContent += value
      console.log("this is happeni")
     }
     }
+
+    //SCREEN HAS SOME CONTENT
+
+    const lastChar = screen.textContent.slice(-1);
+    const operators = ["+", "-", "x", "/"];
+
+    if(operators.includes(lastChar)) {
+      screen.textContent = screen.textContent.slice(0, -1) + value;
+    }else{
+
+      screen.textContent += value;
+    }
+
 }
