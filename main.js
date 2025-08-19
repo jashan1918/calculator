@@ -11,10 +11,12 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
 
-  if(b === 0) return alert("you can't divide by 0")
+  if(num2 === 0) return alert("you can't divide by 0")
 
   return num1 / num2;
 }
+
+
 
 function operate(operator, a, b) {
 
@@ -85,7 +87,7 @@ function handleOperators(value) {
       return;
     }else {
      screen.textContent += value
-     console.log("this is happeni")
+     console.log("this is happening")
     }
     }
 
